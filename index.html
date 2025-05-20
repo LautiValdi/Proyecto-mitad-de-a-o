@@ -1,0 +1,141 @@
+<!DOCTYPE html>
+<html lang="es">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Capitán Pepo: Rescate Espacial</title>
+    <link rel="stylesheet" href="./css/styles.css" />
+  </head>
+
+  <body>
+    <div class="container">
+      <h1>Capitán Pepo: Rescate Espacial</h1>
+      <button onclick="mostrarModalIntroduccion()">Iniciar Juego</button>
+      <div id="game-output"></div>
+    </div>
+
+    <!-- Introducción -->
+    <div id="modal-intro" class="modal">
+      <div class="modal-content">
+        <div class="modal-hud">
+          <span id="hud-puntaje">Puntaje: 0</span>
+          <span id="hud-vidas">Vidas: 2</span>
+        </div>
+        <span class="close" onclick="cerrarModal('modal-intro')">&times;</span>
+        <p>
+          Eres el Capitán Pepo, audaz explorador espacial. Tu nave
+          <em>“El Cometa Veloz”</em> se estrelló en el misterioso planeta Xylos.
+          Debes reunir a tu tripulación y reparar la nave. ¿Listo para la
+          aventura?
+        </p>
+        <button onclick="cerrarModal('modal-intro'); iniciarJuego()">
+          Comenzar Aventura
+        </button>
+      </div>
+    </div>
+
+    <!-- Descripción de nivel -->
+    <div id="modal-nivel" class="modal">
+      <div class="modal-content">
+        <div class="modal-hud">
+          <span id="hud-puntaje">Puntaje: 0</span>
+          <span id="hud-vidas">Vidas: 2</span>
+        </div>
+        <span class="close" onclick="cerrarModal('modal-nivel')">&times;</span>
+        <p id="texto-nivel"></p>
+        <button onclick="cerrarModal('modal-nivel'); mostrarModalPregunta()">
+          Continuar
+        </button>
+      </div>
+    </div>
+
+    <!-- Pregunta -->
+    <div id="modal-pregunta" class="modal">
+      <div class="modal-content">
+        <div class="modal-hud">
+          <span id="hud-puntaje">Puntaje: 0</span>
+          <span id="hud-vidas">Vidas: 2</span>
+        </div>
+        <span class="close" onclick="cerrarModal('modal-pregunta')"
+          >&times;</span
+        >
+        <p id="pregunta"></p>
+        <div id="opciones-container"></div>
+        <button onclick="verificarRespuesta()">Enviar Respuesta</button>
+      </div>
+    </div>
+
+    <!-- Progreso (acierto) -->
+    <div id="modal-progreso" class="modal">
+      <div class="modal-content">
+        <div class="modal-hud">
+          <span id="hud-puntaje">Puntaje: 0</span>
+          <span id="hud-vidas">Vidas: 2</span>
+        </div>
+        <span class="close" onclick="cerrarModal('modal-progreso')"
+          >&times;</span
+        >
+        <p id="mensaje-progreso"></p>
+        <button onclick="cerrarModal('modal-progreso'); mostrarModalPregunta()">
+          Continuar
+        </button>
+      </div>
+    </div>
+
+    <!-- Historia fin de nivel -->
+    <div id="modal-historia" class="modal">
+      <div class="modal-content">
+        <div class="modal-hud">
+          <span id="hud-puntaje">Puntaje: 0</span>
+          <span id="hud-vidas">Vidas: 2</span>
+        </div>
+        <span class="close" onclick="cerrarModal('modal-historia')"
+          >&times;</span
+        >
+        <p id="texto-historia"></p>
+        <button onclick="cerrarModal('modal-historia'); mostrarModalNivel()">
+          Continuar
+        </button>
+      </div>
+    </div>
+
+    <!-- GAME OVER definitivo -->
+    <div id="modal-gameover" class="modal">
+      <div class="modal-content">
+        <div class="modal-hud">
+          <span id="hud-puntaje">Puntaje: 0</span>
+          <span id="hud-vidas">Vidas: 0</span>
+        </div>
+        <span class="close" onclick="cerrarModal('modal-gameover')"
+          >&times;</span
+        >
+        <p>Respuesta incorrecta. GAME OVER.</p>
+        <p>La nave nodriza no puede esperar. Tu misión ha fracasado.</p>
+        <button onclick="cerrarModal('modal-gameover'); reiniciarJuego()">
+          Reintentar Misión
+        </button>
+      </div>
+    </div>
+
+    <!-- GAME OVER parcial (pierdes 1 vida) -->
+    <div id="modal-gameover-parcial" class="modal">
+      <div class="modal-content">
+        <div class="modal-hud">
+          <span id="hud-puntaje">Puntaje: 0</span>
+          <span id="hud-vidas">Vidas: 1</span>
+        </div>
+        <span class="close" onclick="cerrarModal('modal-gameover-parcial')"
+          >&times;</span
+        >
+        <p>Respuesta incorrecta. Has perdido una vida.</p>
+        <button
+          onclick="cerrarModal('modal-gameover-parcial'); mostrarModalPregunta()"
+        >
+          Continuar
+        </button>
+      </div>
+    </div>
+
+    <script src="./js/script.js"></script>
+  </body>
+</html>

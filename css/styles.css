@@ -1,0 +1,137 @@
+/*  GLOBAL  */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: Arial, sans-serif;
+}
+
+body {
+  background-image: url(../assets/Fondo\ juego\ pepo.png);
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-position: center;
+  color: #fff;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+  overflow: hidden;
+}
+
+/* CONTENEDOR PRINCIPAL  */
+.container {
+  text-align: center;
+  max-width: 500px;
+  padding: 20px;
+  border-radius: 10px;
+  background: #0f1d18f2;
+  box-shadow: 0 0 15px rgba(0, 0, 0, 0.5);
+}
+h1 {
+  font-size: 2rem;
+  color: #39cc96;
+  margin-bottom: 20px;
+}
+
+button {
+  background: #39cc96;
+  color: #fff;
+  border: none;
+  padding: 10px 20px;
+  margin-top: 15px;
+  font-size: 1rem;
+  cursor: pointer;
+  border-radius: 5px;
+  transition: background 0.3s;
+}
+button:hover {
+  background: #39cc96;
+}
+
+#game-output {
+  margin-top: 20px;
+  max-height: 400px;
+  overflow-y: auto;
+  text-align: left;
+}
+#game-output p {
+  margin-bottom: 10px;
+  padding: 10px;
+  background: #444;
+  border-radius: 5px;
+}
+
+/*  MODALES  */
+.modal {
+  display: none;
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: rgba(0, 0, 0, 0.7);
+  justify-content: center;
+  align-items: center;
+  z-index: 1000;
+}
+.modal-content {
+  background: #0f1d18f2;
+  padding: 30px;
+  width: 80%;
+  max-width: 600px;
+  text-align: center;
+  border-radius: 15px;
+  box-shadow: 0 0 20px rgba(0, 0, 0, 0.8);
+  position: relative;
+}
+.close {
+  position: absolute;
+  top: 15px;
+  right: 20px;
+  font-size: 1.8rem;
+  font-weight: bold;
+  cursor: pointer;
+  transition: color 0.3s;
+  color: #fff;
+}
+.close:hover {
+  color: #39cc96;
+}
+
+/*  HUD en los modales  */
+.modal-hud {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  font-weight: bold;
+  margin-bottom: 15px;
+}
+.modal-hud span {
+  background: #247759;
+  padding: 6px 12px;
+  border-radius: 6px;
+}
+
+/* Opciones de respuesta */
+#opciones-container {
+  margin: 15px 0 20px;
+}
+#opciones-container div {
+  margin: 10px 0;
+  padding: 10px;
+  background: #247759;
+  border-radius: 5px;
+  transition: background 0.3s;
+}
+#opciones-container div:hover {
+  background: #154634;
+}
+#opciones-container input[type="radio"] {
+  margin-right: 10px;
+  accent-color: #39cc96;
+}
+#opciones-container label {
+  font-size: 1rem;
+  vertical-align: middle;
+}
