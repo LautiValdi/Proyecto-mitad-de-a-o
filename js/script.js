@@ -1,11 +1,11 @@
-/* ========== VARIABLES GLOBALES ========== */
+/*  VARIABLES GLOBALES */
 let indicePregunta = 0;
 let nivelActual = 1;
 const preguntasPorNivel = 3;
 let puntaje = 0;
 let vidas = 2;
 
-/* ========== DATOS DEL JUEGO ========== */
+/*  DATOS DEL JUEGO  */
 const preguntas = [
   [
     // Nivel 1
@@ -112,7 +112,7 @@ const historiaNivel = [
   "¡Misión cumplida! Tripulación reunida, hora de volver a casa.",
 ];
 
-/* ========== UTILIDADES DE INTERFAZ ========== */
+/*  UTILIDADES DE INTERFAZ  */
 function mostrarModal(id) {
   document.getElementById(id).style.display = "flex";
 }
@@ -131,7 +131,7 @@ function actualizarHUD() {
   }
 }
 
-/* ========== FLUJO PRINCIPAL ========== */
+/*  FLUJO PRINCIPAL  */
 function mostrarModalIntroduccion() {
   mostrarModal("modal-intro");
 }
