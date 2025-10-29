@@ -1,4 +1,10 @@
-/*  GLOBAL  */
+/* -------------------------------------------------
+   GLOBAL
+   Reglas globales aplicadas a todo el documento:
+   - Reset básico de margin/padding
+   - box-sizing para facilitar cálculos de tamaño
+   - fuente por defecto del proyecto
+--------------------------------------------------*/
 * {
   margin: 0;
   padding: 0;
@@ -6,6 +12,13 @@
   font-family: Arial, sans-serif;
 }
 
+/* -------------------------------------------------
+   BODY / Fondo y layout central
+   - Fondo del juego (imagen) y propiedades de ajuste
+   - Color de texto por defecto y centrado del contenedor
+   - Height 100vh para ocupar toda la ventana
+   - overflow hidden evita scroll cuando el modal está centrado
+--------------------------------------------------*/
 body {
   background-image: url(../assets/Fondo\ juego\ pepo.png);
   background-size: cover;
@@ -19,7 +32,13 @@ body {
   overflow: hidden;
 }
 
-/* CONTENEDOR PRINCIPAL  */
+/* -------------------------------------------------
+   CONTENEDOR PRINCIPAL
+   - Caja central que contiene título, botón y output
+   - Fondo semitransparente para contraste con el fondo
+   - Border-radius y shadow para aspecto 'modal' dentro de la página
+   - `h1` con color temático del juego
+--------------------------------------------------*/
 .container {
   text-align: center;
   max-width: 500px;
@@ -30,10 +49,16 @@ body {
 }
 h1 {
   font-size: 2rem;
-  color: #39cc96;
+  color: #39cc96; /* color verde brillante para el título */
   margin-bottom: 20px;
 }
 
+/* -------------------------------------------------
+   BOTONES
+   - Estilo base para botones (color temático, padding)
+   - Sin borde por defecto y con cursor pointer
+   - Transición suave al hover
+--------------------------------------------------*/
 button {
   background: #39cc96;
   color: #fff;
@@ -46,9 +71,15 @@ button {
   transition: background 0.3s;
 }
 button:hover {
+  /* mantener color (puedes cambiar a un color más oscuro si quieres) */
   background: #39cc96;
 }
 
+/* -------------------------------------------------
+   AREA DE SALIDA DEL JUEGO
+   - Donde se muestran mensajes/resultados del juego
+   - Limite de altura y scroll vertical si hay mucho contenido
+--------------------------------------------------*/
 #game-output {
   margin-top: 20px;
   max-height: 400px;
@@ -58,11 +89,10 @@ button:hover {
 #game-output p {
   margin-bottom: 10px;
   padding: 10px;
-  background: #444;
+  background: #444; /* fondo oscuro para mensajes */
   border-radius: 5px;
 }
 
-/*  MODALES  */
 .modal {
   display: none;
   position: fixed;
@@ -71,11 +101,13 @@ button:hover {
   width: 100%;
   height: 100%;
   background: rgba(0, 0, 0, 0.7);
+  /* flex centering para situar .modal-content en el centro */
   justify-content: center;
   align-items: center;
   z-index: 1000;
 }
 .modal-content {
+  /* caja interna del modal: fondo, padding y border-radius */
   background: #0f1d18f2;
   padding: 30px;
   width: 80%;
@@ -86,6 +118,7 @@ button:hover {
   position: relative;
 }
 .close {
+  /* icono de cierre en la esquina del modal */
   position: absolute;
   top: 15px;
   right: 20px;
@@ -96,10 +129,15 @@ button:hover {
   color: #fff;
 }
 .close:hover {
+  /* cambio de color al pasar el ratón */
   color: #39cc96;
 }
 
-/*  HUD en los modales  */
+/* -------------------------------------------------
+   HUD dentro de modales
+   - Muestra información persistente (puntaje / vidas)
+   - Disposición en fila con separación
+--------------------------------------------------*/
 .modal-hud {
   display: flex;
   justify-content: space-between;
@@ -113,7 +151,13 @@ button:hover {
   border-radius: 6px;
 }
 
-/* Opciones de respuesta */
+/* -------------------------------------------------
+   OPCIONES DE RESPUESTA
+   - Contenedor y cada opción (div) con padding y color
+   - Hover para indicar selección visual
+   - Radios con `accent-color` que empata con tema
+   - Labels alineados verticalmente con los radios
+--------------------------------------------------*/
 #opciones-container {
   margin: 15px 0 20px;
 }
@@ -129,7 +173,7 @@ button:hover {
 }
 #opciones-container input[type="radio"] {
   margin-right: 10px;
-  accent-color: #39cc96;
+  accent-color: #39cc96; /* color del control de radio en navegadores compatibles */
 }
 #opciones-container label {
   font-size: 1rem;
